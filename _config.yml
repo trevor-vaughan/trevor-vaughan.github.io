@@ -1,0 +1,152 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Blog - Trevor Vaughan
+subtitle: Version 0.0.1
+name: Trevor Vaughan
+email: peiriannydd+blog@gmail.com
+description: |
+  Personal blog of Trevor Vaughan. Covers topics such as DevSecOps, DevOps,
+  automation, IT security, and other random things that I either want to
+  remember or think others might find interesting.
+
+  The contents of this blog are my own opinions and do not reflect those of any
+  particular employer or customer unless explicitly stated as such.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://trevor-vaughan.github.io"
+twitter_username: peiriannydd
+github_username:  trevor-vaughan
+repository: trevor-vaughan/trevor-vaughan.github.io
+breadcrumbs: false
+timezone: America/New_York
+paginate: 5
+search: true
+lunr:
+  search_within_pages: true
+
+author:
+  name: Trevor Vaughan
+  bio: |
+    Automating compliance for fun and...mostly for fun.
+
+    Over the last couple of decades, I've done everything from large-scale
+    compliance automation to helping to start a company as well as professional
+    consulting.
+
+    My primary focus is on DevSecOps and the surrounding ecosystem but I'll
+    happily dabble in anything from business process automation to federal
+    policy ontology mappings.
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/trevor-vaughan"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/peiriannydd"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/trevor-vaughan-83b2958/"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/trevor-vaughan"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/peiriannydd"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/trevor-vaughan-83b2958/"
+
+footer:
+social:
+  type: Person
+  name: Trevor Vaughan
+  links:
+    - "https://twitter.com/peiriannydd"
+    - "https://www.linkedin.com/in/trevor-vaughan-83b2958/"
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-C5X6S05N4Y"
+    anonymize_ip: false
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: posts
+      author_profile: true
+      comments: false
+      read_time: true
+      related: true
+      share: true
+      show_date: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      comments: false
+      read_time: false
+      related: true
+      share: true
+      show_date: true
+
+
+# Build settings
+
+## Theme options
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: air
+locale: en-US
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
