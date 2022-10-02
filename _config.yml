@@ -109,6 +109,7 @@ defaults:
       share: true
       show_date: true
       classes: wide
+      excerpt_separator: <!--more-->
   # _pages
   - scope:
       path: ""

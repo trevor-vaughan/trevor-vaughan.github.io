@@ -2,13 +2,16 @@
 layout: posts
 title:  "Java Spring STIG"
 date:   2022-10-02 00:00:00 -0500
-categories: spring tomcat stig compliance java fips
+toc:    true
+tags: spring tomcat stig compliance java fips
 ---
 
 This article provides guidance on ensuring that the embedded Tomcat server
 provided with the [Spring Framework](https://spring.io/) is configured in
 accordance with the Tomcat Secure Technical Implementation Guide
 [STIG](https://public.cyber.mil/stigs/) from [DISA](https://disa.mil/).
+
+<!--more-->
 
 The following sections have been designed in an implementation-friendly, as
 opposed to an assessment, or testing-friendly, fashion. STIG identifiers are
