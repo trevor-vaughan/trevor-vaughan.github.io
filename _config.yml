@@ -39,6 +39,10 @@ breadcrumbs: false
 timezone: America/New_York
 paginate: 5
 search: true
+markdown: CommonMarkGhPages
+commonmark:
+  options: ["UNSAFE", "SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
 lunr:
   search_within_pages: true
 
@@ -51,7 +55,7 @@ author:
     compliance automation to helping to start a company as well as professional
     consulting.
 
-    My primary focus is on DevSecOps and the surrounding ecosystem but I'll
+    My primary focus is on DevSecOps and the surrounding ecosystem but I
     happily dabble in anything from business process automation to federal
     policy ontology mappings.
   links:
@@ -104,6 +108,7 @@ defaults:
       related: true
       share: true
       show_date: true
+      classes: wide
   # _pages
   - scope:
       path: ""
