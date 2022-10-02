@@ -712,8 +712,7 @@ public class TomcatStig implements WebServerFactoryCustomizer<TomcatServletWebSe
 # Troubleshooting
 ----
 
-Once FIPS mode is enabled, you may run into various issues that have to be
-remedied over time.
+Once FIPS mode is enabled, you may run into various issues that have to be remedied.
 
 <details>
   <summary>Something is randomly breaking</summary>
