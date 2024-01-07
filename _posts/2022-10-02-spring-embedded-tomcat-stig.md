@@ -3,7 +3,16 @@ title: "Java Spring STIG"
 date: 2022-10-02 00:00:00 -0500
 classes: wide
 toc: true
-tags: spring tomcat stig compliance java fips
+categories:
+  - Programming
+  - Compliance
+tags:
+  - spring
+  - tomcat
+  - stig
+  - compliance
+  - java
+  - fips
 ---
 
 This article provides guidance on ensuring that the embedded Tomcat server

@@ -2,7 +2,11 @@
 title: "Blogs and New Year Resolutions"
 date: 2024-01-01 16:14:00 -0500
 toc: false
-tags: misc
+categories:
+  - Random
+tags:
+  - resolution
+  - good intentions
 ---
 
 Attempting to motivate myself to actually keep notes on things that I find
