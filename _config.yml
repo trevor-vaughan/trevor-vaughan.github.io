@@ -1,18 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
@@ -32,22 +17,31 @@ description: |
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://trevor-vaughan.github.io"
-twitter_username: peiriannydd
 github_username:  trevor-vaughan
 repository: trevor-vaughan/trevor-vaughan.github.io
 breadcrumbs: false
 timezone: America/New_York
 paginate: 5
 search: true
-markdown: CommonMarkGhPages
-commonmark:
-  options: ["UNSAFE", "SMART", "FOOTNOTES"]
-  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+search_provider: lunr
 lunr:
   search_within_pages: true
+## GitHub Compat
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  parse_block_html: true
 
 author:
   name: Trevor Vaughan
+  avatar: "/assets/images/TV_Icon.png"
   bio: |
     Automating compliance for fun and...mostly for fun.
 
@@ -62,9 +56,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/trevor-vaughan"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/peiriannydd"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/trevor-vaughan-83b2958/"
@@ -74,9 +65,6 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/trevor-vaughan"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/peiriannydd"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/trevor-vaughan-83b2958/"
@@ -86,7 +74,6 @@ social:
   type: Person
   name: Trevor Vaughan
   links:
-    - "https://twitter.com/peiriannydd"
     - "https://www.linkedin.com/in/trevor-vaughan-83b2958/"
 
 analytics:
@@ -101,14 +88,13 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: posts
+      layout: single
       author_profile: true
       comments: false
       read_time: true
       related: true
       share: true
       show_date: true
-      classes: wide
       excerpt_separator: <!--more-->
   # _pages
   - scope:
@@ -123,19 +109,31 @@ defaults:
       share: true
       show_date: true
 
-
 # Build settings
 
 ## Theme options
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: air
 locale: en-US
 
 plugins:
+  ## GitHub Compat
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+  ## Additional Plugins
+  - jemoji
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-include-cache
+  # Keep this last
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.

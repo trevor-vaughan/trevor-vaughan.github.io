@@ -1,8 +1,8 @@
 ---
-layout: posts
-title:  "Java Spring STIG"
-date:   2022-10-02 00:00:00 -0500
-toc:    true
+title: "Java Spring STIG"
+date: 2022-10-02 00:00:00 -0500
+classes: wide
+toc: true
 tags: spring tomcat stig compliance java fips
 ---
 
@@ -21,7 +21,7 @@ Long blocks of code have been collapsed, so please look out for sections like
 the following:
 
 <details>
-  <summary>Important stuff here</summary>
+  <summary markdown='span'>Important stuff here</summary>
 Implementation Reference!
 </details>
 
@@ -163,7 +163,7 @@ Executing your application can be done by unzipping the artifact and executing
 the appropriate script in the `bin` directory.
 
 <details>
-  <summary> How to verify your configuration </summary>
+  <summary markdown='span'> How to verify your configuration </summary>
 
 The following code can be used to verify the configuration:
 
@@ -223,7 +223,7 @@ Create a file in your applications `config` directory called `FipsCheck.java`
 with the following content:
 
 <details>
-  <summary>FipsCheck.java</summary>
+<summary markdown='span'>FipsCheck.java</summary>
 
 ```java
 package my.app.starter.config;
@@ -278,8 +278,7 @@ public class FipsCheck implements WebServerFactoryCustomizer<TomcatServletWebSer
     });
   }
 }
-```
-</details>
+``` </details>
 
 Next, create a directory called `config/exceptions` and a file in that directory named `FipsCheckException.java` with the following content:
 
@@ -340,7 +339,7 @@ Ensure that the following settings appear in the `application.yaml` file and not
 in a profile.
 
 <details>
-  <summary>application.yaml</summary>
+  <summary markdown='span'>application.yaml</summary>
 
 ```yaml
 # NOTE: Just because a STIG item is listed here does not mean that it is
@@ -537,10 +536,9 @@ form.
 
 Ideally, the Spring community would pick this up and turn it into a plugin (hint, hint)!
 
-<details>
-  <summary>TomcatStig.java</summary>
-
+<details><summary markdown='span'>TomcatStig.java</summary>
 ```java
+
 package my.app.starter.config;
 
 import javax.validation.constraints.Pattern;
@@ -694,7 +692,6 @@ public class TomcatStig implements WebServerFactoryCustomizer<TomcatServletWebSe
   }
 }
 ```
-
 </details>
 
 ## References
@@ -715,7 +712,7 @@ public class TomcatStig implements WebServerFactoryCustomizer<TomcatServletWebSe
 Once FIPS mode is enabled, you may run into various issues that have to be remedied.
 
 <details>
-  <summary>Something is randomly breaking</summary>
+  <summary markdown='span'>Something is randomly breaking</summary>
 
 If you find that your application is randomly crashing, the first thing to try
 is to disble FIPS mode to see if it has to do with your cryptography setup.
@@ -726,7 +723,7 @@ For testing, you can set `stig.fips-mode: false` in your `application.yml` but
 </details>
 
 <details>
-  <summary>The underlying system isn't FIPS compliant</summary>
+  <summary markdown='span'>The underlying system isn't FIPS compliant</summary>
 
 You can individually disable FIPS for Tomcat (but leave it on for BouncyCastle)
 by setting the following in `application.yaml`:
@@ -745,7 +742,7 @@ by setting the following in `application.yaml`:
 </details>
 
 <details>
-  <summary>Your passwords are not long enough</summary>
+  <summary markdown='span'>Your passwords are not long enough</summary>
 
 If you see an error like the following, then you need to make sure that your
 passwords meet the required length.
@@ -760,7 +757,7 @@ In this case, the password must be at least `14` characters (`112 bits`).
 </details>
 
 <details>
-  <summary>The application hangs</summary>
+  <summary markdown='span'>The application hangs</summary>
 
 You may discover that your application hangs during startup. This is because the
 cryptography library has been configured to use `SecureRandom` instead of the
@@ -773,7 +770,7 @@ install a Pseudo-Random Number Generator (PRNG) on your system to prevent hangs.
 </details>
 
 <details>
-  <summary>java.io.IOException: DER length more than 4 bytes: 109</summary>
+  <summary markdown='span'>java.io.IOException: DER length more than 4 bytes: 109</summary>
 
 If you see this error, you are trying to use a jks file that has not been created in a FIPS-compatible format.
 
