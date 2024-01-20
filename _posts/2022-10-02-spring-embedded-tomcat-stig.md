@@ -9,10 +9,10 @@ categories:
 tags:
   - spring
   - tomcat
-  - stig
+  - STIG
   - compliance
   - java
-  - fips
+  - FIPS
 ---
 
 This article provides guidance on ensuring that the embedded Tomcat server
