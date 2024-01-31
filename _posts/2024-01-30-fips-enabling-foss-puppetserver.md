@@ -132,7 +132,7 @@ sealing violation: can't seal package org.bouncycastle.crypto: already loaded
 This means that there is a baked-in version of the BouncyCastle libraries in the
 `puppetserver` uber-jar that we need to replace.
 
-## :brain: Surgery
+## :rocket: Surgery
 
 Now to get our hands dirty and mod the `puppetserver` JAR itself.
 
